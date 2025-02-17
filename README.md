@@ -8,7 +8,7 @@ In the project directory, you can run:
 
 ### `npm start`
 
-Redux thunk api for requests.
+->Redux thunk api for requests.
 
 ![Ekran görüntüsü 2025-02-17 164216](https://github.com/user-attachments/assets/de898418-f376-4ad8-84d1-e00ee4dc2179)
 
