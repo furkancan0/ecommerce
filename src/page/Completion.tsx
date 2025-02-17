@@ -6,8 +6,7 @@ const Completion: React.FC = () => {
     useEffect(()=>{
         const createOrder = async() => {
             try {
-              const response = await axios.post(`http://localhost:8050/api/v1/orders/1`);
-              console.log("inşasllh olmuştur...",response)
+              const response = await axios.post(`http://localhost:8060/api/v1/orders/1`);
             } catch (err:any) {
               console.log(err.message)
             }

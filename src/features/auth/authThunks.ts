@@ -8,7 +8,7 @@ export const login = createAsyncThunk(
   'auth/login',
   async (credentials: Credentials, { rejectWithValue }) => {
     try {
-      const response = await axios.post('http://localhost:8050/api/v1/auth/authenticate', credentials);
+      const response = await axios.post('http://localhost:8060/api/v1/auth/authenticate', credentials);
       toast.success('Login successful');
       return response.data; // Assuming the response contains the token
     } catch (err) {
@@ -23,7 +23,7 @@ export const fetchUser = createAsyncThunk(
   'auth/fetchUser',
   async (_, { rejectWithValue }) => {
     try {
-      const response = await axios.get('http://localhost:8050/api/v1/user/me', {
+      const response = await axios.get('http://localhost:8060/api/v1/user/me', {
         headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
       });
       return response.data;

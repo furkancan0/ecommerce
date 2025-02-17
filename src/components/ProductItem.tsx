@@ -36,7 +36,7 @@ const ProductItem: React.FC<ProductItemProps> = ({ id, name, price }) => {
       
         <Link to={`/product/${1}`} className="h-36 w-full">
           <div  className='cursor-pointer'>
-            <img className="mx-auto h-full dark:hidden rounded-md" src="https://as1.ftcdn.net/v2/jpg/08/04/16/32/1000_F_804163250_esXVmK3teI25YIFl5586rxkXMeTsToT2.jpg" alt="" />
+            <img className="mx-auto h-36 dark:hidden rounded-md object-contain" src="https://www.gaming.gen.tr/wp-content/uploads/2025/01/asus-prime-geforce-rtx-5080-oc-16gb-gddr7-256-bit-dlss-4-ekran-karti-478061-600x600.jpg" alt="" />
           </div>
         </Link>
         <div className="pt-6">
@@ -84,7 +84,7 @@ const ProductItem: React.FC<ProductItemProps> = ({ id, name, price }) => {
           </ul>
 
           <div className="mt-4 flex items-center justify-between gap-4">
-            <p className="text-xl font-extrabold leading-tight text-gray-900 dark:text-white">$899</p>
+            <p className="text-md font-extrabold leading-tight text-gray-900 dark:text-white">{price}$</p>
 
             <button onClick={handleAddToCart} className="inline-flex items-center rounded-lg bg-primary-700 px-1 py-2 text-sm font-medium text-black hover:bg-gray-100 ">
             <svg className="feather feather-shopping-cart" fill="none" height="20" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg> 

@@ -9,15 +9,22 @@ const Payment: React.FC = () => {
   const [clientSecret, setClientSecret] = useState<string>("");
 
   useEffect(() => {
-    fetch("http://localhost:8050/api/checkout/config").then(async (r) => {
+    const token = localStorage.getItem('token');
+    // Set up headers, including Authorization if token exists
+    const headers:HeadersInit = token ? { Authorization: `Bearer ${token}` } : {};
+    fetch("http://localhost:8060/api/checkout/config",{headers:headers}).then(async (r) => {
       const { publishableKey } = await r.json();
       setStripePromise(loadStripe(publishableKey));
     });
   }, []);
 
   useEffect(() => {
-    fetch("http://localhost:8050/api/checkout/create-payment-intent", {
+    const token = localStorage.getItem('token');
+    // Set up headers, including Authorization if token exists
+    const headers:HeadersInit = token ? { Authorization: `Bearer ${token}` } : {};
+    fetch("http://localhost:8060/api/checkout/create-payment-intent", {
       method: "POST",
+      headers:headers,
       body: JSON.stringify({}),
     }).then(async (result) => {
       var { clientSecret } = await result.json();
